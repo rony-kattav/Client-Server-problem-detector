@@ -39,7 +39,12 @@ npm run dev
 npm start
 ```
 
-# During the first time running the project:
+After the client uploads, the application should start at your default web browser. If not, enter the path:
+```
+localhost:3000
+```
+
+### During the first time running the project:
 * Enter the path: 
 ```
 localhost:5000/createDB
