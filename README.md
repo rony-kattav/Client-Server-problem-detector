@@ -27,7 +27,7 @@ npm install
 ```
 npm install
 ```
-* In './server/index.js' change the password of the data base to your local password
+* Go to the file './server/index.js' and change the password in the code to your local MySQL password
 
 ### Executing program
 
@@ -40,7 +40,7 @@ npm run dev
 npm start
 ```
 
-During the first time running the project:
+# During the first time running the project:
 * Enter the path: 
 ```
 localhost:5000/createDB
