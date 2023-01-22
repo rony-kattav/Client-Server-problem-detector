@@ -7,7 +7,7 @@ Web application that detects a customer problem in his device after entering det
 Client-Server web application using React and NodeJS. The app contains a form page that asks 
 the customer details about his device problem, and returns a response accordingly. If the customer
 entered valid input, the response he received, along with the current date and time and his form input
-saved into SQL data base.
+saved into a local SQL data base.
 
 ## Getting Started
 
