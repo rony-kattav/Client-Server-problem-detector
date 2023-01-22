@@ -27,8 +27,7 @@ npm install
 ```
 npm install
 ```
-* Go to the file './server/index.js' and change the password in the code to your local MySQL password
-
+* Go to the file: './server/index.js' and in the createPool request change the fields: host, user and password to your local MySQL fields (the host localhost and the user root are the default values).
 ### Executing program
 
 * Enter the server directory and run the command:
