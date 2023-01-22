@@ -15,15 +15,14 @@ const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
     // change your local sql password here:
-    password: 'WebApp22!',
+    password: 'password',
 });
 
 // GET route for creating the data base locally for the first time
 app.get("/createDB", (req, res) => {
     const createDb = `CREATE DATABASE ${dbName}`;
-    db.query(createDb, (err, result) => {
+    db.query(createDb, (err) => {
         if(err) throw err;
-        console.log(result);
         res.send("DB created");
     });
 });
@@ -31,9 +30,8 @@ app.get("/createDB", (req, res) => {
 // GET route for creating the table of the data base for the first time
 app.get("/createTable", (req, res) => {
     const createTable = `CREATE TABLE ${dbName}.${tableName} (userID INT NOT NULL, problem VARCHAR(300) NOT NULL, serialNum VARCHAR(64) NOT NULL, lightsStatus JSON NOT NULL, currDate VARCHAR(100) NOT NULL, responseStatus VARCHAR(100) NOT NULL)`;
-    db.query(createTable, (err, result) => {
+    db.query(createTable, (err) => {
         if(err) throw err;
-        console.log(result);
         res.send("Table created");
     })
 });
