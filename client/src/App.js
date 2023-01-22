@@ -23,7 +23,7 @@ function App() {
     // update the new lights array with the new light
     setLights(prevLights => {
       return [...prevLights, newLight]
-    })
+    });
   }
 
   // save the userID
@@ -56,7 +56,7 @@ function App() {
 
     // check all fields are not empty
     if(userID === '' || problem === '' || serialNum === '' || lights.length < LIGHTS){
-      alert("please enter all fields below")
+      alert("please enter all fields below");
     } else {
       // send the user input to the server
       axios.post('http://localhost:5000/responseStatus', {userData: userData}).then((res) => {

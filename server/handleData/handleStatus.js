@@ -25,7 +25,7 @@ function calcMsg(userData){
         return getRes36(res, status, NumberOfLights)
     }
     else if (serialStart === '51-B'){
-        return getRes51(res, status)
+        return getRes51(res, status, NumberOfLights)
     }
     // if serial number consists only numbers
     else if(/^\d+$/.test(serialNum)){
@@ -78,8 +78,8 @@ function getRes36(res, status, NumberOfLights){
  * @param {object} status number of lights that on/off/blinking
  * @returns {object} the appropriate message
  */
-function getRes51(res, status){
-    if(status.off === 3){
+function getRes51(res, status, NumberOfLights){
+    if(status.off === NumberOfLights){
         res.msg = "turn on the device";
         res.statusIndex = 1;
         return res

@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 function Light(props) {
     const [lightStatus, setLightStatus] = useState('');
 
-    const handleChange = (event) => {
+    function handleChange(event){
         const newStatus = event.target.value;
         setLightStatus(newStatus);
 
@@ -20,7 +20,7 @@ function Light(props) {
     };
 
     return (
-        <div className='light'>
+        <div>
             <FormControl variant="standard" fullWidth>
                 <InputLabel id="demo-simple-select-standard-label">Indicator light number {props.lightNum}</InputLabel>
                 <Select

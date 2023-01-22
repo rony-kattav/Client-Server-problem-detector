@@ -29,7 +29,9 @@ app.get("/createDB", (req, res) => {
 
 // GET route for creating the table of the data base for the first time
 app.get("/createTable", (req, res) => {
-    const createTable = `CREATE TABLE ${dbName}.${tableName} (userID INT NOT NULL, problem VARCHAR(300) NOT NULL, serialNum VARCHAR(64) NOT NULL, lightsStatus JSON NOT NULL, currDate VARCHAR(100) NOT NULL, responseStatus VARCHAR(100) NOT NULL)`;
+    const createTable = `CREATE TABLE ${dbName}.${tableName} 
+    (userID INT NOT NULL, problem VARCHAR(300) NOT NULL, serialNum VARCHAR(64) NOT NULL, 
+    lightsStatus JSON NOT NULL, currDate VARCHAR(100) NOT NULL, responseStatus VARCHAR(100) NOT NULL)`;
     db.query(createTable, (err) => {
         if(err) throw err;
         res.send("Table created");
@@ -42,9 +44,10 @@ app.post('/responseStatus', (req, res) => {
     const {userID, problem, serialNum, lightsStatus} = userData;
     const currDate = getCurrDate();
     const responseStatus = calcMsg(userData);
-    // save ths data only if indicator lights are valid
+    // save ths data only if the user input is valid
     if(responseStatus.statusIndex === 1){
-        const sqlInsert = `INSERT INTO ${dbName}.${tableName} (userID, problem, serialNum, lightsStatus, currDate, responseStatus) VALUES (?,?,?,?,?,?)`;
+        const sqlInsert = `INSERT INTO ${dbName}.${tableName} 
+        (userID, problem, serialNum, lightsStatus, currDate, responseStatus) VALUES (?,?,?,?,?,?)`;
         db.query(sqlInsert,
             [userID, problem, serialNum, JSON.stringify(lightsStatus), currDate, responseStatus.msg],
             (err) => {
