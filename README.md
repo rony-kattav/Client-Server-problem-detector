@@ -27,8 +27,7 @@ npm install
 ```
 npm install
 ```
-* In './server/index.js' change the password of the data base to your local password
-
+* Go to the file: './server/index.js' and in the createPool request change the fields: host, user and password to your local MySQL fields (the host localhost and the user root are the default values).
 ### Executing program
 
 * Enter the server directory and run the command:
@@ -40,7 +39,12 @@ npm run dev
 npm start
 ```
 
-During the first time running the project:
+After the client uploads, the application should start at your default web browser. If not, enter the path:
+```
+localhost:3000
+```
+
+### During the first time running the project:
 * Enter the path: 
 ```
 localhost:5000/createDB
